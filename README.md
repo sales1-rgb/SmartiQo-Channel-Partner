@@ -1,0 +1,1 @@
+# SmartiQo-Channel-Partner
