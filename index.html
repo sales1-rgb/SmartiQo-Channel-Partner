@@ -1,215 +1,396 @@
-```html
+```html id="smartiqo-mobile-presentation"
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Presentation</title>
+<meta charset="UTF-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+/>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+<title>SmartiQo Automation</title>
 
-    body{
-      font-family: Arial, sans-serif;
-      background:#111;
-      color:#fff;
-      overflow:hidden;
-    }
+<style>
 
-    .slides-container{
-      width:100vw;
-      height:100vh;
-      position:relative;
-    }
+:root{
+  --bg:#2F2E31;
+  --text:#E7E6E5;
+  --accent:#8CC0DA;
+  --border:#8D94B8;
+}
 
-    .slide{
-      width:100%;
-      height:100%;
-      position:absolute;
-      top:0;
-      left:0;
-      display:none;
-      padding:40px 20px;
-      overflow-y:auto;
-      background:linear-gradient(135deg,#111,#222);
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-tap-highlight-color: transparent;
+}
 
-    .slide.active{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-    }
+html,
+body{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  background:var(--bg);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  color:var(--text);
+}
 
-    h1{
-      font-size:42px;
-      margin-bottom:20px;
-      text-align:center;
-    }
+/* MOBILE-FIRST PRESENTATION */
 
-    h2{
-      font-size:32px;
-      margin-bottom:20px;
-      text-align:center;
-    }
+body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
-    p{
-      max-width:900px;
-      line-height:1.7;
-      text-align:center;
-      font-size:18px;
-      margin-bottom:20px;
-    }
+.presentation{
+  width:100%;
+  max-width:440px;
+  height:100vh;
+  position:relative;
+  overflow:hidden;
+  background:var(--bg);
+}
 
-    .nav-buttons{
-      position:fixed;
-      bottom:20px;
-      left:50%;
-      transform:translateX(-50%);
-      display:flex;
-      gap:10px;
-      z-index:999;
-    }
+/* SLIDES */
 
-    .nav-buttons button{
-      padding:12px 20px;
-      border:none;
-      border-radius:10px;
-      background:#ff9800;
-      color:#fff;
-      font-size:16px;
-      cursor:pointer;
-      font-weight:bold;
-    }
+.slide{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:28px 22px 120px;
+  opacity:0;
+  transform:translateX(100%);
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+  overflow-y:auto;
+}
 
-    .nav-buttons button:hover{
-      background:#ffb74d;
-    }
+.slide.active{
+  opacity:1;
+  transform:translateX(0);
+  z-index:2;
+}
 
-    .resource-buttons{
-      display:flex;
-      flex-direction:column;
-      gap:16px;
-      width:100%;
-      max-width:420px;
-      margin-top:20px;
-    }
+.slide.prev{
+  transform:translateX(-100%);
+}
 
-    /* IMPORTANT FIX FOR MOBILE */
-    .resource-link{
-      text-decoration:none;
-      width:100%;
-      display:block;
-    }
+.slide-card{
+  width:100%;
+  border:1px solid rgba(141,148,184,0.35);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.04),
+      rgba(255,255,255,0.02)
+    );
+  border-radius:28px;
+  padding:28px 22px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+}
 
-    .resource-btn{
-      width:100%;
-      padding:18px 20px;
-      border:none;
-      border-radius:14px;
-      background:#2196f3;
-      color:#fff;
-      font-size:18px;
-      font-weight:bold;
-      cursor:pointer;
-      transition:0.3s;
-      display:block;
-      text-align:center;
-    }
+.slide-number{
+  color:var(--accent);
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+  font-weight:700;
+}
 
-    .resource-btn:hover{
-      background:#42a5f5;
-    }
+h1,
+h2{
+  color:var(--accent);
+  line-height:1.25;
+  margin-bottom:20px;
+  font-weight:700;
+}
 
-    @media(max-width:768px){
+h1{
+  font-size:30px;
+}
 
-      h1{
-        font-size:30px;
-      }
+h2{
+  font-size:24px;
+}
 
-      h2{
-        font-size:24px;
-      }
+.content{
+  color:var(--text);
+  font-size:18px;
+  line-height:1.8;
+  font-weight:500;
+}
 
-      p{
-        font-size:16px;
-      }
+/* RESOURCE BUTTONS */
 
-      .resource-btn{
-        font-size:16px;
-        padding:16px;
-      }
-    }
-  </style>
+.resource-group{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:24px;
+}
+
+.resource-link{
+  width:100%;
+  text-decoration:none;
+  display:block;
+}
+
+.resource-btn{
+  width:100%;
+  border:none;
+  border-radius:16px;
+  background:var(--accent);
+  color:#1d1d1f;
+  padding:18px 18px;
+  font-size:17px;
+  font-weight:700;
+  text-align:center;
+  cursor:pointer;
+  transition:0.25s ease;
+  box-shadow:
+    0 6px 18px rgba(140,192,218,0.22);
+}
+
+.resource-btn:active{
+  transform:scale(0.98);
+}
+
+.resource-btn:hover{
+  background:#a7d0e3;
+}
+
+/* NAVIGATION */
+
+.controls{
+  position:absolute;
+  bottom:18px;
+  left:50%;
+  transform:translateX(-50%);
+  width:calc(100% - 36px);
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  z-index:20;
+}
+
+.nav-btn{
+  flex:1;
+  border:none;
+  border-radius:18px;
+  padding:16px 12px;
+  background:#3d3c41;
+  color:var(--text);
+  font-size:16px;
+  font-weight:700;
+  border:1px solid rgba(140,192,218,0.28);
+  cursor:pointer;
+}
+
+.nav-btn:active{
+  transform:scale(0.98);
+}
+
+.progress{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:rgba(255,255,255,0.08);
+  z-index:30;
+}
+
+.progress-bar{
+  height:100%;
+  width:11%;
+  background:var(--accent);
+  transition:width 0.3s ease;
+}
+
+/* MOBILE OPTIMIZATION */
+
+@media (max-width:440px){
+
+  .slide{
+    padding:24px 18px 110px;
+  }
+
+  .slide-card{
+    padding:24px 18px;
+    border-radius:24px;
+  }
+
+  h1{
+    font-size:26px;
+  }
+
+  h2{
+    font-size:22px;
+  }
+
+  .content{
+    font-size:17px;
+    line-height:1.75;
+  }
+
+  .resource-btn{
+    font-size:16px;
+    padding:17px;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-  <div class="slides-container">
+<div class="presentation">
 
-    <!-- Slide 1 -->
-    <section class="slide active">
-      <h1>Welcome</h1>
-      <p>This is Slide 1 of your presentation.</p>
-    </section>
+  <div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
 
-    <!-- Slide 2 -->
-    <section class="slide">
-      <h2>About Us</h2>
-      <p>Slide 2 content goes here.</p>
-    </section>
+  <!-- SLIDE 1 -->
+  <section class="slide active">
+    <div class="slide-card">
+      <div class="slide-number">Slide 1</div>
 
-    <!-- Slide 3 -->
-    <section class="slide">
-      <h2>Products</h2>
-      <p>Slide 3 content goes here.</p>
-    </section>
+      <h1>SmartiQo Automation</h1>
 
-    <!-- Slide 4 -->
-    <section class="slide">
-      <h2>Services</h2>
-      <p>Slide 4 content goes here.</p>
-    </section>
+      <div class="content">
+        Channel Partner Program · Luxury Segment · 2026
+      </div>
+    </div>
+  </section>
 
-    <!-- Slide 5 -->
-    <section class="slide">
-      <h2>Features</h2>
-      <p>Slide 5 content goes here.</p>
-    </section>
+  <!-- SLIDE 2 -->
+  <section class="slide">
+    <div class="slide-card">
+      <div class="slide-number">Slide 2</div>
 
-    <!-- Slide 6 -->
-    <section class="slide">
-      <h2>Pricing</h2>
-      <p>Slide 6 content goes here.</p>
-    </section>
+      <h2>Market Reality</h2>
 
-    <!-- Slide 7 -->
-    <section class="slide">
-      <h2>Gallery</h2>
-      <p>Slide 7 content goes here.</p>
-    </section>
+      <div class="content">
+        Fixed 45% Margins · Backend Layer · Scalable Ecosystem
+      </div>
+    </div>
+  </section>
 
-    <!-- Slide 8 -->
-    <section class="slide">
-      <h2>Contact</h2>
-      <p>Slide 8 content goes here.</p>
-    </section>
+  <!-- SLIDE 3 -->
+  <section class="slide">
+    <div class="slide-card">
+      <div class="slide-number">Slide 3</div>
 
-    <!-- Slide 9 FIXED -->
-    <section class="slide">
+      <h2>Portfolio</h2>
+
+      <div class="content">
+        Smart Home Panels · Smart Lighting · Motorized · Commercial
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 4 -->
+  <section class="slide">
+    <div class="slide-card">
+      <div class="slide-number">Slide 4</div>
+
+      <h2>Onboarding</h2>
+
+      <div class="content">
+        Low-Risk Trial · Rs. 30,000–40,000 liquid stock demo inventory
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 5 -->
+  <section class="slide">
+    <div class="slide-card">
+      <div class="slide-number">Slide 5</div>
+
+      <h2>Operations</h2>
+
+      <div class="content">
+        Sales Engine (Min 1 Person) · Technical Unit (Min 1 Person)
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 6 -->
+  <section class="slide">
+    <div class="slide-card">
+      <div class="slide-number">Slide 6</div>
+
+      <h2>Marketing</h2>
+
+      <div class="content">
+        40-50 Inbound Local Leads/Month · The 5 : 2–3 Lead Closure Ratio
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 7 -->
+  <section class="slide">
+    <div class="slide-card">
+      <div class="slide-number">Slide 7</div>
+
+      <h2>Scaling</h2>
+
+      <div class="content">
+        Post 3-Month Trial: Rs. 1 Lakh Deposit, Experience Centre Meet, Margin Boost
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 8 -->
+  <section class="slide">
+    <div class="slide-card">
+      <div class="slide-number">Slide 8</div>
+
+      <h2>Action Steps</h2>
+
+      <div class="content">
+        Onboarding under 48 Hours:<br><br>
+
+        Step 1: GST/PAN<br>
+        Step 2: Return LOI<br>
+        Step 3: Order Stock
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 9 -->
+  <section class="slide">
+    <div class="slide-card">
+
+      <div class="slide-number">Slide 9</div>
+
       <h2>Quick Resources</h2>
-      <p>Tap any button below to open the resource in a new browser tab.</p>
 
-      <div class="resource-buttons">
+      <div class="content">
+        Tap any resource below to open securely in a new browser tab.
+      </div>
 
-        <!-- FIXED CLEAN ANCHOR LINKS -->
+      <div class="resource-group">
 
-        <a 
+        <!-- CLEAN STANDARD ANCHOR LINKS -->
+
+        <a
           href="https://google.com"
           target="_blank"
           rel="noopener noreferrer"
@@ -220,7 +401,7 @@
           </button>
         </a>
 
-        <a 
+        <a
           href="https://google.com"
           target="_blank"
           rel="noopener noreferrer"
@@ -231,7 +412,7 @@
           </button>
         </a>
 
-        <a 
+        <a
           href="https://google.com"
           target="_blank"
           rel="noopener noreferrer"
@@ -242,7 +423,7 @@
           </button>
         </a>
 
-        <a 
+        <a
           href="https://google.com"
           target="_blank"
           rel="noopener noreferrer"
@@ -253,7 +434,7 @@
           </button>
         </a>
 
-        <a 
+        <a
           href="https://goo.gl"
           target="_blank"
           rel="noopener noreferrer"
@@ -265,68 +446,114 @@
         </a>
 
       </div>
-    </section>
 
+    </div>
+  </section>
+
+  <!-- NAVIGATION -->
+  <div class="controls">
+    <button class="nav-btn" onclick="prevSlide()">
+      Previous
+    </button>
+
+    <button class="nav-btn" onclick="nextSlide()">
+      Next
+    </button>
   </div>
 
-  <!-- Navigation -->
-  <div class="nav-buttons">
-    <button onclick="prevSlide()">Previous</button>
-    <button onclick="nextSlide()">Next</button>
-  </div>
+</div>
 
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
+<script>
 
-    function showSlide(index){
-      slides.forEach((slide)=>{
-        slide.classList.remove('active');
-      });
+const slides = document.querySelectorAll('.slide');
+const progressBar = document.getElementById('progressBar');
 
-      slides[index].classList.add('active');
+let currentSlide = 0;
+
+/* SHOW SLIDE */
+
+function showSlide(index){
+
+  slides.forEach((slide, i)=>{
+
+    slide.classList.remove('active','prev');
+
+    if(i < index){
+      slide.classList.add('prev');
     }
 
-    function nextSlide(){
-      currentSlide++;
+  });
 
-      if(currentSlide >= slides.length){
-        currentSlide = slides.length - 1;
-      }
+  slides[index].classList.add('active');
 
-      showSlide(currentSlide);
-    }
+  const progress =
+    ((index + 1) / slides.length) * 100;
 
-    function prevSlide(){
-      currentSlide--;
+  progressBar.style.width = progress + '%';
+}
 
-      if(currentSlide < 0){
-        currentSlide = 0;
-      }
+/* NEXT */
 
-      showSlide(currentSlide);
-    }
+function nextSlide(){
 
-    // Swipe support for mobile
-    let startX = 0;
-    let endX = 0;
+  if(currentSlide < slides.length - 1){
 
-    document.addEventListener('touchstart', e => {
-      startX = e.changedTouches[0].screenX;
-    });
+    currentSlide++;
+    showSlide(currentSlide);
 
-    document.addEventListener('touchend', e => {
-      endX = e.changedTouches[0].screenX;
+  }
+}
 
-      if(endX < startX - 50){
-        nextSlide();
-      }
+/* PREVIOUS */
 
-      if(endX > startX + 50){
-        prevSlide();
-      }
-    });
-  </script>
+function prevSlide(){
+
+  if(currentSlide > 0){
+
+    currentSlide--;
+    showSlide(currentSlide);
+
+  }
+}
+
+/* MOBILE SWIPE SUPPORT */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', e => {
+
+  touchStartX =
+    e.changedTouches[0].screenX;
+
+}, {passive:true});
+
+document.addEventListener('touchend', e => {
+
+  touchEndX =
+    e.changedTouches[0].screenX;
+
+  handleSwipe();
+
+}, {passive:true});
+
+function handleSwipe(){
+
+  const swipeDistance =
+    touchEndX - touchStartX;
+
+  if(swipeDistance < -50){
+    nextSlide();
+  }
+
+  if(swipeDistance > 50){
+    prevSlide();
+  }
+}
+
+showSlide(currentSlide);
+
+</script>
 
 </body>
 </html>
