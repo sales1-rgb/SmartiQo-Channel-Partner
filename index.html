@@ -41,15 +41,9 @@
         .hero-stat-block { background: linear-gradient(135deg, rgba(140,192,218,0.15), rgba(141,148,184,0.05)); border: 1px solid var(--color-accent-blue); border-radius: 16px; padding: 24px; text-align: center; margin: 16px 0; }
         .hero-stat-value { font-size: 3.5rem; font-weight: 900; color: var(--color-accent-blue); line-height: 1; }
         .hero-stat-label { font-size: 0.95rem; color: #FFFFFF; font-weight: 600; margin-top: 6px; }
-        
-        /* SECURE FORM METHOD ACTIONS FOR MOBILE BYPASS */
-        .resource-form { margin-top: 10px; width: 100%; }
-        .cta-submit-button { display: block; text-align: center; background-color: var(--color-accent-blue); color: var(--color-dark-bg); font-weight: 700; font-size: 0.95rem; padding: 14px; border-radius: 12px; width: 100%; box-shadow: 0 4px 12px rgba(140,192,218,0.2); font-family: var(--font-main); border: none; outline: none; cursor: pointer; transition: transform 0.1s ease; }
-        .cta-submit-button:active { transform: scale(0.98); opacity: 0.9; }
-        
+        .cta-link-button { display: block; text-align: center; background-color: var(--color-accent-blue); color: var(--color-dark-bg); font-weight: 700; font-size: 0.95rem; padding: 14px; border-radius: 12px; text-decoration: none; margin-top: 10px; width: 100%; box-shadow: 0 4px 12px rgba(140,192,218,0.2); font-family: var(--font-main); border: none; outline: none; cursor: pointer; }
         .slide-footer { margin-top: 24px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--color-gray-dark); font-weight: 500; }
-        .slide-footer form { display: inline; }
-        .slide-footer button.footer-sub { background: none; border: none; color: var(--color-accent-blue); font-size: 0.7rem; cursor: pointer; font-weight: 500; font-family: var(--font-main); text-decoration: none; padding: 0; }
+        .slide-footer a { color: var(--color-accent-blue); text-decoration: none; font-weight: 500; font-family: var(--font-main); }
     </style>
 </head>
 <body>
@@ -58,86 +52,62 @@
         <div class="slide-card">
             <div class="slide-header"><span class="slide-badge">Welcome</span><div class="brand-logo-wrapper"></div></div>
             <div class="slide-body"><h1>SmartiQo Automation</h1><div class="subtitle">Channel Partner Program</div><p style="color: var(--color-gray-light); font-weight:500;">Premium Smart Home Automation · Luxury Segment</p></div>
-            <div class="slide-footer"><span>Confidential Presentation · 2025–26</span><form action="https://smartiqo.com" method="get" target="_blank"><button class="footer-sub" type="submit">smartiqo.com</button></form></div>
+            <div class="slide-footer"><span>Confidential Presentation · 2025–26</span><a href="https://smartiqo.com" target="_blank">smartiqo.com</a></div>
         </div>
         <!-- SLIDE 2 -->
         <div class="slide-card">
             <div class="slide-header"><span class="slide-badge">01 / Market Reality</span><div class="brand-logo-wrapper"></div></div>
             <div class="slide-body"><h2>Where We Fit</h2><div class="grid-stack"><div class="grid-item"><div class="grid-item-title">Fixed 45% Margins</div><div class="grid-item-body">Protected structure on MRP to ensure business planning structural predictability.</div></div><div class="grid-item"><div class="grid-item-title">Backend Layer</div><div class="grid-item-body">Comprehensive remote diagnostics, seamless firmware updates, and troubleshooting support.</div></div><div class="grid-item"><div class="grid-item-title">Scalable Ecosystem</div><div class="grid-item-body">One unified application managing architectural switches, lighting, smart locks, and sensors.</div></div></div></div>
-            <div class="slide-footer"><span>SmartiQo · Ahmedabad</span><form action="https://smartiqo.com" method="get" target="_blank"><button class="footer-sub" type="submit">smartiqo.com</button></form></div>
+            <div class="slide-footer"><span>SmartiQo · Ahmedabad</span><a href="https://smartiqo.com" target="_blank">smartiqo.com</a></div>
         </div>
         <!-- SLIDE 3 -->
         <div class="slide-card">
             <div class="slide-header"><span class="slide-badge">02 / Portfolio</span><div class="brand-logo-wrapper"></div></div>
             <div class="slide-body"><h2>Product Matrix</h2><div class="matrix-container"><div class="matrix-box"><h3>Smart Home</h3><ul><li>Aura Custom</li><li>Topaz Touch Panels</li><li>Garnet Switches</li></ul></div><div class="matrix-box"><h3>Smart Lighting</h3><ul><li>Indoor & Track Layouts</li><li>Starry Ceilings</li><li>Mesh Stretch Sheets</li></ul></div><div class="matrix-box"><h3>Motorized</h3><ul><li>Heavy-Duty Gates</li><li>App Window Openers</li><li>Curtain Tracks</li></ul></div><div class="matrix-box"><h3>Commercial</h3><ul><li>5-Way Smart Handles</li><li>Hotel RFID Locks</li><li>Privacy Glass Film</li></ul></div></div></div>
-            <div class="slide-footer"><span>Comprehensive Solutions</span><form action="https://smartiqo.com" method="get" target="_blank"><button class="footer-sub" type="submit">smartiqo.com</button></form></div>
+            <div class="slide-footer"><span>Comprehensive Solutions</span><a href="https://smartiqo.com" target="_blank">smartiqo.com</a></div>
         </div>
         <!-- SLIDE 4 -->
         <div class="slide-card">
             <div class="slide-header"><span class="slide-badge">03 / Onboarding</span><div class="brand-logo-wrapper"></div></div>
             <div class="slide-body"><h2>Low-Risk Trial</h2><div class="hero-stat-block"><div class="hero-stat-value">45%</div><div class="hero-stat-label">Fixed Standard Dealer Margin</div></div><div class="grid-stack" style="margin-top:0;"><div class="grid-item"><div class="grid-item-title">Initial Setup Inventory</div><div class="grid-item-body">Rs. 30,000 – 40,000 + GST. 100% liquid stock for local client demos. Zero dead sign-up fees.</div></div></div></div>
-            <div class="slide-footer"><span>Phase 1: 3-Month Window</span><form action="https://smartiqo.com" method="get" target="_blank"><button class="footer-sub" type="submit">smartiqo.com</button></form></div>
+            <div class="slide-footer"><span>Phase 1: 3-Month Window</span><a href="https://smartiqo.com" target="_blank">smartiqo.com</a></div>
         </div>
         <!-- SLIDE 5 -->
         <div class="slide-card">
             <div class="slide-header"><span class="slide-badge">04 / Operations</span><div class="brand-logo-wrapper"></div></div>
             <div class="slide-body"><h2>Required Setup</h2><div class="grid-stack"><div class="grid-item"><div class="grid-item-title">Sales Engine (Min. 1 Person)</div><div class="grid-item-body">Manages regional inbound leads; pitches interior architects and structural pipeline.</div></div><div class="grid-item"><div class="grid-item-title">Technical Unit (Min. 1 Person)</div><div class="grid-item-body">Handles physical site electrical assessments, module wiring, and application mapping.</div></div></div></div>
-            <div class="slide-footer"><span>Partner manages local execution</span><form action="https://smartiqo.com" method="get" target="_blank"><button class="footer-sub" type="submit">smartiqo.com</button></form></div>
+            <div class="slide-footer"><span>Partner manages local execution</span><a href="https://smartiqo.com" target="_blank">smartiqo.com</a></div>
         </div>
         <!-- SLIDE 6 -->
         <div class="slide-card">
             <div class="slide-header"><span class="slide-badge">05 / Marketing</span><div class="brand-logo-wrapper"></div></div>
             <div class="slide-body"><h2>Lead Acceleration</h2><div class="hero-stat-block"><div class="hero-stat-value">40–50</div><div class="hero-stat-label">Inbound Local Leads / Month</div></div><p style="font-size:0.85rem; font-weight:500;"><strong>The 5 : 2–3 Ratio:</strong> For every 5 corporate leads routed to your desk, your team independently generates 2–3 closures via localized design networks.</p></div>
-            <div class="slide-footer"><span>Corporate Co-Marketing Push</span><form action="https://smartiqo.com" method="get" target="_blank"><button class="footer-sub" type="submit">smartiqo.com</button></form></div>
+            <div class="slide-footer"><span>Corporate Co-Marketing Push</span><a href="https://smartiqo.com" target="_blank">smartiqo.com</a></div>
         </div>
         <!-- SLIDE 7 -->
         <div class="slide-card">
             <div class="slide-header"><span class="slide-badge">06 / Scaling</span><div class="brand-logo-wrapper"></div></div>
             <div class="slide-body"><h2>Long-Term Matrix</h2><div class="subtitle">Post 3-Month Trial Completion:</div><div class="grid-stack"><div class="grid-item"><div class="grid-item-body"><strong>1. Security Layer:</strong> Standard Rs. 1,00,000 corporate channel protection deposit.</div></div><div class="grid-item"><div class="grid-item-body"><strong>2. Alignment Meet:</strong> Strategy synchronization at the Ahmedabad Experience Centre.</div></div><div class="grid-item"><div class="grid-item-body"><strong>3. Margin Boost:</strong> Retain base 45% tier with added volume performance escalations.</div></div></div></div>
-            <div class="slide-footer"><span>Phase 2: Formal Agreement</span><form action="https://smartiqo.com" method="get" target="_blank"><button class="footer-sub" type="submit">smartiqo.com</button></form></div>
+            <div class="slide-footer"><span>Phase 2: Formal Agreement</span><a href="https://smartiqo.com" target="_blank">smartiqo.com</a></div>
         </div>
         <!-- SLIDE 8 -->
         <div class="slide-card">
             <div class="slide-header"><span class="slide-badge">07 / Action Steps</span><div class="brand-logo-wrapper"></div></div>
             <div class="slide-body"><h2>Get Started <span style="font-weight:400; color:var(--color-accent-blue); font-size:1.1rem; display:block; margin-top:2px;">Under 48 Hours</span></h2><div class="grid-stack"><div class="grid-item"><div class="grid-item-body"><strong>Step 1:</strong> Forward Business GST Certificate & Corporate PAN Card.</div></div><div class="grid-item"><div class="grid-item-body"><strong>Step 2:</strong> Review and digitally return the 3-Month Trial LOI Document.</div></div><div class="grid-item"><div class="grid-item-body"><strong>Step 3:</strong> Order initial demo stock to instantly unlock training modules.</div></div></div></div>
-            <div class="slide-footer"><span>Ready Onboarding Framework</span><form action="https://smartiqo.com" method="get" target="_blank"><button class="footer-sub" type="submit">smartiqo.com</button></form></div>
+            <div class="slide-footer"><span>Ready Onboarding Framework</span><a href="https://smartiqo.com" target="_blank">smartiqo.com</a></div>
         </div>
-        <!-- SLIDE 9 (RE-ENGINEERED WITH FORM SUBMISSION WRAPPERS TO PREVENT SCREEN FLASHES / REDIRECT FAILS) -->
+        <!-- SLIDE 9 -->
         <div class="slide-card">
-            <div class="slide-header">
-                <span class="slide-badge">Resources</span>
-                <div class="brand-logo-wrapper"></div>
-            </div>
+            <div class="slide-header"><span class="slide-badge">Resources</span><div class="brand-logo-wrapper"></div></div>
             <div class="slide-body">
                 <h2>Quick Resources</h2>
-                
-                <form class="resource-form" action="https://google.com" method="get" target="_blank">
-                    <button type="submit" class="cta-submit-button">📄 Product Catalog</button>
-                </form>
-                
-                <form class="resource-form" action="https://google.com" method="get" target="_blank">
-                    <button type="submit" class="cta-submit-button">💰 Price List</button>
-                </form>
-                
-                <form class="resource-form" action="https://google.com" method="get" target="_blank">
-                    <button type="submit" class="cta-submit-button">📦 Packages Link</button>
-                </form>
-                
-                <form class="resource-form" action="https://google.com" method="get" target="_blank">
-                    <button type="submit" class="cta-submit-button">🎬 Watch Videos</button>
-                </form>
-                
-                <form class="resource-form" action="https://goo.gl" method="get" target="_blank">
-                    <button type="submit" class="cta-submit-button" style="background-color: var(--color-muted-blue); color: #fff; margin-top: 16px;">📍 Experience Center Map</button>
-                </form>
+                <a class="cta-link-button" href="https://google.com" target="_blank">📄 Product Catalog</a>
+                <a class="cta-link-button" href="https://google.com" target="_blank">💰 Price List</a>
+                <a class="cta-link-button" href="https://google.com" target="_blank">📦 Packages Link</a>
+                <a class="cta-link-button" href="https://google.com" target="_blank">🎬 Watch Videos</a>
+                <a class="cta-link-button" style="background-color: var(--color-muted-blue); color: #fff; margin-top: 16px;" href="https://goo.gl" target="_blank">📍 Experience Center Map</a>
             </div>
-            <div class="slide-footer">
-                <span>
-                    <form action="https://instagram.com" method="get" target="_blank"><button class="footer-sub" type="submit">Instagram</button></form> · 
-                    <form action="https://youtube.com" method="get" target="_blank"><button class="footer-sub" type="submit">YouTube</button></form>
-                </span>
-                <form action="https://smartiqo.com" method="get" target="_blank"><button class="footer-sub" type="submit">smartiqo.com</button></form>
-            </div>
+            <div class="slide-footer"><span><a href="https://instagram.com" target="_blank">Instagram</a> · <a href="https://youtube.com" target="_blank">YouTube</a></span><a href="https://smartiqo.com" target="_blank">smartiqo.com</a></div>
         </div>
     </div>
 </body>
