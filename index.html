@@ -1,36 +1,528 @@
-<div class="resources-card">
-    <div class="card-header">
-        <span class="resources-title">RESOURCES</span>
-        <span class="logo-badge">Qo</span>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SmartiQo Channel Partner Program</title>
+    <style>
+        /* BRAND COLOR PALETTE SETUP */
+        :root {
+            --color-dark-bg: #2F2E31;      
+            --color-light-bg: #E7E6E5;     
+            --color-accent-blue: #8CC0DA;  
+            --color-muted-blue: #8D94B8;   
+            --color-gray-dark: #71777A;    
+            --color-gray-light: #8A8983;   
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-    <h2 class="main-heading">Quick Resources</h2>
+        /* STRUCTURAL MOBILITY LOCKS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    <div class="button-group">
-        <!-- FIXED PRODUCT CATALOG BUTTON WITH EMBEDDED ATTRIBUTES -->
-        <a class="cta-link-button" href="https://google.com" target="_blank" rel="noopener noreferrer">
-            📄 Product Catalog
-        </a>
+        body {
+            font-family: var(--font-main);
+            background-color: #111112;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            padding: 12px;
+        }
 
-        <a class="cta-link-button" href="#" target="_blank" rel="noopener noreferrer">
-            📦 Packages Link
-        </a>
+        /* PHONE DECK CONTAINER WRAPPER */
+        .presentation-deck {
+            max-width: 440px; 
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
 
-        <a class="cta-link-button" href="#" target="_blank" rel="noopener noreferrer">
-            🎬 Watch Videos
-        </a>
+        /* SLIDE LAYER CONFIGURATION */
+        .slide-card {
+            background-color: var(--color-dark-bg);
+            border-radius: 20px;
+            padding: 28px 24px;
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.04);
+        }
 
-        <a class="cta-link-button map-button" href="#" target="_blank" rel="noopener noreferrer">
-            📍 Experience Center Map
-        </a>
-    </div>
+        /* SHARP TOP DECORATIVE STRIP */
+        .slide-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--color-accent-blue), var(--color-muted-blue));
+            border-radius: 20px 20px 0 0;
+        }
 
-    <div class="card-footer">
-        <div class="social-links">
-            <a href="#">Instagram</a> · <a href="#">YouTube</a>
+        /* HEADER ROW LOGO ARCHITECTURE */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            width: 100%;
+        }
+
+        .slide-badge {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-accent-blue);
+            font-weight: 700;
+        }
+
+        /* PREMIUM NATIVE Qo BRAND LOGO SYSTEM */
+        .brand-logo-wrapper {
+            width: 38px;
+            height: 38px;
+            background-color: #004481; 
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .brand-logo-wrapper::before {
+            content: 'Qo';
+            color: #FFFFFF;
+            font-weight: 800;
+            font-size: 1.15rem;
+            letter-spacing: -0.5px;
+        }
+
+        /* TYPOGRAPHY FORMATTING ENGINE */
+        .slide-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #FFFFFF;
+            margin-bottom: 18px;
+        }
+
+        .subtitle {
+            font-size: 1.05rem;
+            color: var(--color-accent-blue);
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 24px;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--color-light-bg);
+            opacity: 0.9;
+        }
+
+        /* GRID CONTENT BLOCK STACK */
+        .grid-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 8px;
+        }
+
+        .grid-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--color-accent-blue);
+            padding: 14px 16px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .grid-item-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-muted-blue);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .grid-item-body {
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.4;
+            color: var(--color-light-bg);
+        }
+
+        /* ARCHITECTURAL MATRIX STACKING */
+        .matrix-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .matrix-box {
+            background: rgba(141, 148, 184, 0.1);
+            border: 1px solid rgba(141, 148, 184, 0.2);
+            padding: 12px;
+            border-radius: 12px;
+        }
+
+        .matrix-box h3 {
+            font-size: 0.85rem;
+            color: var(--color-accent-blue);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .matrix-box ul {
+            list-style: none;
+            font-size: 0.8rem;
+            color: var(--color-light-bg);
+            line-height: 1.4;
+        }
+
+        .matrix-box ul li {
+            margin-bottom: 4px;
+            padding-left: 8px;
+            position: relative;
+        }
+        
+        .matrix-box ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-muted-blue);
+        }
+
+        /* METRIC HIGHLIGHT PANELS */
+        .hero-stat-block {
+            background: linear-gradient(135deg, rgba(140,192,218,0.15), rgba(141,148,184,0.05));
+            border: 1px solid var(--color-accent-blue);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            margin: 16px 0;
+        }
+
+        .hero-stat-value {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--color-accent-blue);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.95rem;
+            color: #FFFFFF;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
+        /* HIGH-PERFORMANCE INTENT LINK BUTTONS WITH STRICT BREAKOUT TOP ATTRIBUTES */
+        .cta-link-button {
+            display: block;
+            text-align: center;
+            background-color: var(--color-accent-blue);
+            color: var(--color-dark-bg);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            margin-top: 10px;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(140,192,218,0.2);
+            font-family: var(--font-main);
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+        }
+        .cta-link-button:active {
+            transform: scale(0.98);
+            opacity: 0.9;
+        }
+
+        /* CONTAINER CARD FOOTERS */
+        .slide-footer {
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            color: var(--color-gray-dark);
+            font-weight: 500;
+        }
+
+        .slide-footer a {
+            color: var(--color-accent-blue);
+            font-size: 0.7rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-family: var(--font-main);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="presentation-deck">
+
+        <!-- SLIDE 1 -->
+        <div class="slide-card">
+            <div class="slide-header">
+                <span class="slide-badge">Welcome</span>
+                <div class="brand-logo-wrapper"></div>
+            </div>
+            <div class="slide-body">
+                <h1>SmartiQo Automation</h1>
+                <div class="subtitle">Channel Partner Program</div>
+                <p style="color: var(--color-gray-light); font-weight:500;">Premium Smart Home Automation · Luxury Segment</p>
+            </div>
+            <div class="slide-footer">
+                <span>Confidential Presentation · 2025–26</span>
+                <a href="https://smartiqo.com" target="_top">smartiqo.com</a>
+            </div>
         </div>
-        <div class="brand-link">
-            <a href="https://smartiqo.com" target="_blank">smartiqo.com</a>
+
+        <!-- SLIDE 2 -->
+        <div class="slide-card">
+            <div class="slide-header">
+                <span class="slide-badge">01 / Market Reality</span>
+                <div class="brand-logo-wrapper"></div>
+            </div>
+            <div class="slide-body">
+                <h2>Where We Fit</h2>
+                <div class="grid-stack">
+                    <div class="grid-item">
+                        <div class="grid-item-title">Fixed 45% Margins</div>
+                        <div class="grid-item-body">Protected structure on MRP to ensure business planning structural predictability.</div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="grid-item-title">Backend Layer</div>
+                        <div class="grid-item-body">Comprehensive remote diagnostics, seamless firmware updates, and troubleshooting support.</div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="grid-item-title">Scalable Ecosystem</div>
+                        <div class="grid-item-body">One unified application managing architectural switches, lighting, smart locks, and sensors.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>SmartiQo · Ahmedabad</span>
+                <a href="https://smartiqo.com" target="_top">smartiqo.com</a>
+            </div>
         </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide-card">
+            <div class="slide-header">
+                <span class="slide-badge">02 / Portfolio</span>
+                <div class="brand-logo-wrapper"></div>
+            </div>
+            <div class="slide-body">
+                <h2>Product Matrix</h2>
+                <div class="matrix-container">
+                    <div class="matrix-box">
+                        <h3>Smart Home</h3>
+                        <ul>
+                            <li>Aura Custom</li>
+                            <li>Topaz Touch Panels</li>
+                            <li>Garnet Switches</li>
+                        </ul>
+                    </div>
+                    <div class="matrix-box">
+                        <h3>Smart Lighting</h3>
+                        <ul>
+                            <li>Indoor & Track Layouts</li>
+                            <li>Starry Ceilings</li>
+                            <li>Mesh Stretch Sheets</li>
+                        </ul>
+                    </div>
+                    <div class="matrix-box">
+                        <h3>Motorized</h3>
+                        <ul>
+                            <li>Heavy-Duty Gates</li>
+                            <li>App Window Openers</li>
+                            <li>Curtain Tracks</li>
+                        </ul>
+                    </div>
+                    <div class="matrix-box">
+                        <h3>Commercial</h3>
+                        <ul>
+                            <li>5-Way Smart Handles</li>
+                            <li>Hotel RFID Locks</li>
+                            <li>Privacy Glass Film</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Comprehensive Solutions</span>
+                <a href="https://smartiqo.com" target="_top">smartiqo.com</a>
+            </div>
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div class="slide-card">
+            <div class="slide-header">
+                <span class="slide-badge">03 / Onboarding</span>
+                <div class="brand-logo-wrapper"></div>
+            </div>
+            <div class="slide-body">
+                <h2>Low-Risk Trial</h2>
+                <div class="hero-stat-block">
+                    <div class="hero-stat-value">45%</div>
+                    <div class="hero-stat-label">Fixed Standard Dealer Margin</div>
+                </div>
+                <div class="grid-stack" style="margin-top:0;">
+                    <div class="grid-item">
+                        <div class="grid-item-title">Initial Setup Inventory</div>
+                        <div class="grid-item-body">Rs. 30,000 – 40,000 + GST. 100% liquid stock for local client demos. Zero dead sign-up fees.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Phase 1: 3-Month Window</span>
+                <a href="https://smartiqo.com" target="_top">smartiqo.com</a>
+            </div>
+        </div>
+
+        <!-- SLIDE 5 -->
+        <div class="slide-card">
+            <div class="slide-header">
+                <span class="slide-badge">04 / Operations</span>
+                <div class="brand-logo-wrapper"></div>
+            </div>
+            <div class="slide-body">
+                <h2>Required Setup</h2>
+                <div class="grid-stack">
+                    <div class="grid-item">
+                        <div class="grid-item-title">Sales Engine (Min. 1 Person)</div>
+                        <div class="grid-item-body">Manages regional inbound leads; pitches interior architects and structural pipeline.</div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="grid-item-title">Technical Unit (Min. 1 Person)</div>
+                        <div class="grid-item-body">Handles physical site electrical assessments, module wiring, and application mapping.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Partner manages local execution</span>
+                <a href="https://smartiqo.com" target="_top">smartiqo.com</a>
+            </div>
+        </div>
+
+        <!-- SLIDE 6 -->
+        <div class="slide-card">
+            <div class="slide-header">
+                <span class="slide-badge">05 / Marketing</span>
+                <div class="brand-logo-wrapper"></div>
+            </div>
+            <div class="slide-body">
+                <h2>Lead Acceleration</h2>
+                <div class="hero-stat-block">
+                    <div class="hero-stat-value">40–50</div>
+                    <div class="hero-stat-label">Inbound Local Leads / Month</div>
+                </div>
+                <p style="font-size:0.85rem; font-weight:500;">
+                    <strong>The 5 : 2–3 Ratio:</strong> For every 5 corporate leads routed to your desk, your team independently generates 2–3 closures via localized design networks.
+                </p>
+            </div>
+            <div class="slide-footer">
+                <span>Corporate Co-Marketing Push</span>
+                <a href="https://smartiqo.com" target="_top">smartiqo.com</a>
+            </div>
+        </div>
+
+        <!-- SLIDE 7 -->
+        <div class="slide-card">
+            <div class="slide-header">
+                <span class="slide-badge">06 / Scaling</span>
+                <div class="brand-logo-wrapper"></div>
+            </div>
+            <div class="slide-body">
+                <h2>Long-Term Matrix</h2>
+                <div class="subtitle">Post 3-Month Trial Completion:</div>
+                <div class="grid-stack">
+                    <div class="grid-item"><div class="grid-item-body"><strong>1. Security Layer:</strong> Standard Rs. 1,00,000 corporate channel protection deposit.</div></div>
+                    <div class="grid-item"><div class="grid-item-body"><strong>2. Alignment Meet:</strong> Strategy synchronization at the Ahmedabad Experience Centre.</div></div>
+                    <div class="grid-item"><div class="grid-item-body"><strong>3. Margin Boost:</strong> Retain base 45% tier with added volume performance escalations.</div></div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Phase 2: Formal Agreement</span>
+                <a href="https://smartiqo.com" target="_top">smartiqo.com</a>
+            </div>
+        </div>
+
+        <!-- SLIDE 8 -->
+        <div class="slide-card">
+            <div class="slide-header">
+                <span class="slide-badge">07 / Action Steps</span>
+                <div class="brand-logo-wrapper"></div>
+            </div>
+            <div class="slide-body">
+                <h2>Get Started <span style="font-weight:400; color:var(--color-accent-blue); font-size:1.1rem; display:block; margin-top:2px;">Under 48 Hours</span></h2>
+                <div class="grid-stack">
+                    <div class="grid-item"><div class="grid-item-body"><strong>Step 1:</strong> Forward Business GST Certificate & Corporate PAN Card.</div></div>
+                    <div class="grid-item"><div class="grid-item-body"><strong>Step 2:</strong> Review and digitally return the 3-Month Trial LOI Document.</div></div>
+                    <div class="grid-item"><div class="grid-item-body"><strong>Step 3:</strong> Order initial demo stock to instantly unlock training modules.</div></div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>Ready Onboarding Framework</span>
+                <a href="https://smartiqo.com" target="_top">smartiqo.com</a>
+            </div>
+        </div>
+
+        <!-- SLIDE 9 (COMPLETELY FORCED INTERACTION BREAKOUT LAYOUTS TARGETING DIRECT APP ROUTING) -->
+        <div class="slide-card">
+            <div class="slide-header">
+                <span class="slide-badge">Resources</span>
+                <div class="brand-logo-wrapper"></div>
+            </div>
+            <div class="slide-body">
+                <h2>Quick Resources</h2>
+                <a class="cta-link-button" href="https://google.com" target="_top">📄 Product Catalog</a>
+                <a class="cta-link-button" href="https://google.com" target="_top">💰 Price List</a>
+                <a class="cta-link-button" href="https://google.com" target="_top">📦 Packages Link</a>
+                <a class="cta-link-button" href="https://google.com" target="_top">🎬 Watch Videos</a>
+                <a class="cta-link-button" style="background-color: var(--color-muted-blue); color: #fff; margin-top: 16px;" href="https://goo.gl" target="_top">📍 Experience Center Map</a>
+            </div>
+            <div class="slide-footer">
+                <span>
+                    <a href="https://instagram.com" target="_top">Instagram</a> · 
+                    <a href="https://youtube.com" target="_top">YouTube</a>
+                </span>
+                <a href="https://smartiqo.com" target="_top">smartiqo.com</a>
+            </div>
+        </div>
+
     </div>
-</div>
+
+</body>
+</html>
+
+
+
